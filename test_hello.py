@@ -11,5 +11,5 @@ def teardown_function(function):
     del function.x
 
 
-def test_hello_subtract:
+def test_hello_subtract():
     assert subtract(test_hello_subtract.x) == 9
