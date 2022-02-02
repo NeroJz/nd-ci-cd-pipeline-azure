@@ -1,62 +1,51 @@
-# nd-ci-cd-pipeline-azure
-Deploying Flask Machine Learning Web App using CI/CD in Azure
+# Overview
 
+<TODO: complete this with an overview of your project>
+
+## Project Plan
+<TODO: Project Plan
+
+* A link to a Trello board for the project
+* A link to a spreadsheet that includes the original and final project plan>
 
 ## Instructions
 
-### Create a virtual environment
-In the azure shell run the following command:
-```
-python3 -m venv ~/.my-repo
-```
+<TODO:  
+* Architectural Diagram (Shows how key parts of the system work)>
 
-To activate the virtual environment, run:
-```
-source ~/.my-repo/bin/activate
-```
+<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-### Configure Github Actions
-Navigate to the github repository.
+* Project running on Azure App Service
 
-Go to Actions > Set up the work yourself
+* Project cloned into Azure Cloud Shell
 
-Replace the main.yml with the following code
+* Passing tests that are displayed after running the `make all` command from the `Makefile`
 
-```
-# This is a basic workflow to help you get started with Actions
+* Output of a test run
 
-name: Python application test with Github Actions
+* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+* Running Azure App Service from Azure Pipelines automatic deployment
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
+The output should look similar to this:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.6
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.6
-    - name: Install dependencies
-      run: |
-        make install
-    - name: Lint with pylint
-      run: |
-        make lint
-    - name: Test with pytest
-      run: |
-        make test
+```bash
+udacity@Azure:~$ ./make_predict_azure_app.sh
+Port: 443
+{"prediction":[20.35373177134412]}
 ```
 
-Save and run main.yml. The output should be illustrated as follow:
+* Output of streamed log files from deployed application
 
-![Github Actions](./screen_shots/03_GithubActions.png)
+> 
+
+## Enhancements
+
+<TODO: A short description of how to improve the project in the future>
+
+## Demo 
+
+<TODO: Add link Screencast on YouTube>
+
+
