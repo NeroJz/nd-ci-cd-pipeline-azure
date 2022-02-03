@@ -26,7 +26,7 @@ The diagram below depicts the architecture of the Continuous Delivery
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-### Project cloned into Azure Cloud Shell
+### Clone Project into Azure Cloud Shell
 Open the Azure Cloud Shell and clone the Github repository with the following command:
 ```
 git clone GITHUB_URL_REPO
@@ -35,7 +35,7 @@ Replace the GITHUB_URL_REPO with the URL that stores the source code.
 
 You can navigate to the folder after it has cloned the repository.
 
-Example:
+Example:<br/>
 ![Azure Shell](./screen_shots/01_AzureShell.png)
 
 ### Creating the Virtual Environment
@@ -50,7 +50,7 @@ Once the virtual environment was created, enter the following command to activat
 ```
 source ~/.my-repo/bin/activate
 ```
-Example:
+Example:<br/>
 ![Virtual Environment](./screen_shots/virtual_env.png)
 
 
@@ -63,13 +63,88 @@ make all
 
 The command will install the dependencies and run the test script.
 
-Output:
+Output:<br/>
 ![Make Output](./screen_shots/02_Makefile_1.png)
 
 ![Make Output](./screen_shots/02_Makefile_2.png)
 
 
-* Output of a test run
+### Setup the Github Actions
+#### Create the workflow
+In Github, navigate to the repository that stores the source code.
+
+Then: Github > Actions > Set Up a workflow yourself.
+
+The browser will open the default template (e.g. main.yml). Replace the content of the template as following:
+
+```
+# This is a basic workflow to help you get started with Actions
+
+name: Python application test with Github Actions
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.6
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.6
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint with pylint
+      run: |
+        make lint
+    - name: Test with pytest
+      run: |
+        make test
+```
+
+Save and commit the changes. The build shall be triggered after saving the commit. The output should look like below:
+
+![Github Actions](./screen_shots/03_GithubActions.png)
+
+
+### Provision the target Azure App Service
+Go back the Azure Cloud Shell.
+
+Run to pull the latest change of the repository.
+
+```
+git pull
+```
+
+To deploy the app to Azure App Service, enter the following command:
+
+```
+webapp up -n <NAME_OF_THE_APP> --resource-group <RESOURCE_GROUP_TO_STORE_THE_APP>
+```
+
+The <NAME_OF_THE_APP> is the name of this APP, whereas, the <RESOURCE_GROUP_TO_STORE_THE_APP> is the resource group that stores this application. You can give any name for both NAME_OF_THE_APP and RESOURCE_GROUP_TO_STORE_THE_APP.
+
+Once the webapp command has successfully run, the app will be deployed.
+
+You can check the app on the resource group via Azure Portal
+Output:<br/>
+
+![App Portal](./screen_shots/05_App_deploy_portal.png)
+
+Or from the URL (e.g.https:<NAME_OF_THE_APP>.azurewebsites.net): <br/>
+![App Deploy URL](./screen_shots/06_App_deploy_url.png)
+
+
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
