@@ -143,6 +143,13 @@ Or from the URL (e.g.https:<NAME_OF_THE_APP>.azurewebsites.net): <br/>
 ![App Deploy URL](./screen_shots/06_App_deploy_url.png)
 
 
+### Configure the Azure Pipeline
+The steps of the configuration can refer the official docs of [Microsoft Azure Devops](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops)
+
+Output:<br/>
+
+
+
 ### Testing on the Application
 Before testing the application, we need to update the enpoint of the <i>make_predict_azure_app.sh</i> shell file.
 
