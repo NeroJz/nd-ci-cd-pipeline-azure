@@ -1,17 +1,24 @@
 # Overview
-
-<TODO: complete this with an overview of your project>
+This repository implements the CI/CD pipeline for Python Flask Machine learning app using Microsoft Azure. 
 
 ## Project Plan
-<TODO: Project Plan
+* [Trello](https://trello.com/b/C3ceeWmW/flask-ml-task)
+* [Project Planning](https://docs.google.com/spreadsheets/d/1dxMQlkFInCwCUSMQBhnbmbo_12ffJuVlZAwjiTnfZjo/edit?usp=sharing)
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+
+## CI/CD Architectural
+The architectural Diagram can be divided into two parts as follow:
+
+### Azure CI
+The diagram below depicts the architecture of the Continuous Integration
+![CI Diagram](./screen_shots/CI.png)
+
+### Azure CD
+The diagram below depicts the architecture of the Continuous Delivery
+![CD Diagram](./screen_shots/CD.png)
+
 
 ## Instructions
-
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
