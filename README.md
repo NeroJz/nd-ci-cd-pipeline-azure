@@ -7,6 +7,10 @@ This repository implements the CI/CD pipeline for Python Flask Machine learning 
 
 
 ## CI/CD Architectural
+The flow diagram below depicts the high level of the architecture:
+![Flow Diagram](./screen_shots/diagram.png)
+
+
 The architectural Diagram can be divided into two parts as follow:
 
 ### Azure CI
@@ -22,11 +26,48 @@ The diagram below depicts the architecture of the Continuous Delivery
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-* Project running on Azure App Service
+### Project cloned into Azure Cloud Shell
+Open the Azure Cloud Shell and clone the Github repository with the following command:
+```
+git clone GITHUB_URL_REPO
+```
+Replace the GITHUB_URL_REPO with the URL that stores the source code.
 
-* Project cloned into Azure Cloud Shell
+You can navigate to the folder after it has cloned the repository.
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+Example:
+![Azure Shell](./screen_shots/01_AzureShell.png)
+
+### Creating the Virtual Environment
+On Azure shell, enter the following command to create virtual environment:
+```
+python3 -m venv ~/.my-repo
+```
+
+The <i>my-repo</i> is the name used for this project. You can use any name as you wish.
+
+Once the virtual environment was created, enter the following command to activate the environment:
+```
+source ~/.my-repo/bin/activate
+```
+Example:
+![Virtual Environment](./screen_shots/virtual_env.png)
+
+
+### Install the dependencies via Makefile
+Once you have the virtual environment installed, you can run the Makefile via:
+
+```
+make all
+```
+
+The command will install the dependencies and run the test script.
+
+Output:
+![Make Output](./screen_shots/02_Makefile_1.png)
+
+![Make Output](./screen_shots/02_Makefile_2.png)
+
 
 * Output of a test run
 
