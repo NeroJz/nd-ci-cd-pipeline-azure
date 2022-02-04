@@ -208,7 +208,7 @@ Some enhancements can be considered in future, including:
 
 Docker is a container technology that helps to isolate the application (a.k.a containerized application) from the environment (staging or production). In order words, an image application runs in an environment, e.g. staging, will able to run in other environments like production. The app can run independently when deploy to any environment. In addition, the instance of Docker app consumes less resource comparing to the instance of virtual machine.
 
-The Kurbenetes is another open source system that helps to manage the containerized applications like deployment, load balancing and scaling. Kurbenetes can be viewed as an 'orchestrator' that manages and scales up/down the containerized application.
+The Kurbenetes is another open source system that helps to manage the containerized applications like deployment, load balancing and scaling. Kurbenetes can be viewed as an 'orchestrator' that can scale up the containerized application to handle more incoming request or vice versa.
 
 ## Demo 
 [Youtube](https://youtu.be/kMC6DevVyd8)
