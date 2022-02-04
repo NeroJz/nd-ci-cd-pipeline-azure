@@ -1,3 +1,5 @@
+[![Python application test with Github Actions](https://github.com/NeroJz/nd-ci-cd-pipeline-azure/actions/workflows/main.yml/badge.svg)](https://github.com/NeroJz/nd-ci-cd-pipeline-azure/actions/workflows/main.yml)
+
 # Overview
 This repository implements the CI/CD pipeline for Python Flask Machine learning app using Microsoft Azure. 
 
@@ -193,16 +195,20 @@ az webapp log tail -n <YOUR_APP_NAME>
 The output: <br/>
 ![Log stream](./screen_shots/07_tail_log.png)
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+## Locust
+The Locust result is shown as below:
 
-* Running Azure App Service from Azure Pipelines automatic deployment
+![Locust](./screen_shots/011_locust.png)
 
-> 
 
 ## Enhancements
 Some enhancements can be considered in future, including:
 1. Docker
 2. Kurbenetes
+
+Docker is a container technology that helps to isolate the application (a.k.a containerized application) from the environment (staging or production). In order words, an image application runs in an environment, e.g. staging, will able to run in other environments like production. The app can run independently when deploy to any environment. In addition, the instance of Docker app consumes less resource comparing to the instance of virtual machine.
+
+The Kurbenetes is another open source system that helps to manage the containerized applications like deployment, load balancing and scaling. Kurbenetes can be viewed as an 'orchestrator' that manages and scales up/down the containerized application.
 
 ## Demo 
 [Youtube](https://youtu.be/kMC6DevVyd8)
