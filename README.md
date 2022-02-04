@@ -127,7 +127,7 @@ git pull
 To deploy the app to Azure App Service, enter the following command:
 
 ```
-webapp up -n <NAME_OF_THE_APP> --resource-group <RESOURCE_GROUP_TO_STORE_THE_APP>
+az webapp up -n <NAME_OF_THE_APP> --resource-group <RESOURCE_GROUP_TO_STORE_THE_APP>
 ```
 
 The <NAME_OF_THE_APP> is the name of this APP, whereas, the <RESOURCE_GROUP_TO_STORE_THE_APP> is the resource group that stores this application. You can give any name for both NAME_OF_THE_APP and RESOURCE_GROUP_TO_STORE_THE_APP.
@@ -205,7 +205,6 @@ Some enhancements can be considered in future, including:
 2. Kurbenetes
 
 ## Demo 
-
-<TODO: Add link Screencast on YouTube>
+[Youtube](https://youtu.be/kMC6DevVyd8)
 
 
