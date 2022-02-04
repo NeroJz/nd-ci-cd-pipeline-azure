@@ -146,7 +146,17 @@ Or from the URL (e.g.https:<NAME_OF_THE_APP>.azurewebsites.net): <br/>
 ### Configure the Azure Pipeline
 The steps of the configuration can refer the official docs of [Microsoft Azure Devops](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops)
 
+Once the configuration of Azure Pipeline was applied, any update on the master branch in the repository will trigger the pipeline to run and deploy the application.
+
+The images below depicts the expected result:
+
 Output:<br/>
+
+![Azure Pipeline 1](./screen_shots/010_pipeline_02.png)
+
+
+![Azure Pipeline 2](./screen_shots/010_pipeline_01.png)
+
 
 
 
